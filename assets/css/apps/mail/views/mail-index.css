@@ -2,4 +2,12 @@
 .mail-container{
     display: grid;
     grid-template-columns: 200px 1fr;
+    /* background-color: #f2f6fc; */
+}
+
+.mail-index-container{
+    /* display: grid;
+    grid-template-columns: 200px 1fr; */
+    background-color: #f2f7fd;
+    min-height: 90%;
 }

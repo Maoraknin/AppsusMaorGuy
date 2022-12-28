@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    height: 100vh;
 }
 
 h1,
@@ -38,4 +39,12 @@ img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+#root{
+  height: 100%;
+}
+
+.app{
+  height: 100%;
 }

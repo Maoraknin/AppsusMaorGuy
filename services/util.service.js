@@ -7,7 +7,9 @@ export const utilService = {
     getDayName,
     getMonthName,
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
+    getFormattedDate,
+    // isBeforeToday
 }
 function makeId(length = 6) {
     var txt = ''
@@ -53,6 +55,33 @@ function getDayName(date, locale) {
     date = new Date(date)
     return date.toLocaleDateString(locale, { weekday: 'long' })
 }
+
+function getFormattedDate(timestamp) {
+    const date = new Date(timestamp)
+    const isToday = _isBeforeToday(date)
+    if(isToday){
+        return date.toLocaleTimeString();
+    }
+    
+    const yyyy = date.getFullYear();
+    let mm = date.getMonth() + 1; // Months start at 0!
+    let dd = date.getDate();
+
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+
+    return ( dd + '/' + mm + '/' + yyyy)
+
+}
+
+function _isBeforeToday(date) {
+    const today = new Date();
+  
+    today.setHours(0, 0, 0, 0);
+  
+    return date > today;
+  }
+
 
 
 function getMonthName(date) {

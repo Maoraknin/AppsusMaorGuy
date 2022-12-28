@@ -24,33 +24,19 @@ export function MailFilter({ onSetFilter }) {
 
     return <section className="mail-filter">
         <form className="filter-form">
-            <div className="input-container">
-                <label htmlFor="subject">Subject:</label>
                 <input type="text"
                     id="subject"
                     name="subject"
-                    placeholder="By subject"
+                    className="search-input"
+                    placeholder="Search mail"
                     value={filterBy.subject}
                     onChange={handleChange}
                 />
-            </div>
-            <div className="input-container">
-                <label htmlFor="isRead"></label>
-
                 <select name="isRead" id="isRead" onChange={handleChange}>
                     <option value=''>All</option>
                     <option value={false}>unread</option>
                     <option value={true}>read</option>
                 </select>
-            </div>
-            {/* <div className="input-container">
-                <label htmlFor="isRead">is Read</label>
-                <input type="checkbox"
-                    id="isRead"
-                    name="isRead"
-                    onChange={handleChange}
-                />
-            </div> */}
         </form>
     </section >
 }

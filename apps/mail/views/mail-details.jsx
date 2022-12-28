@@ -2,6 +2,7 @@ const { useParams, useNavigate, Link } = ReactRouterDOM
 const { useState, useEffect } = React
 
 import { mailService } from '../services/mail.service.js';
+import { utilService } from '../../../services/util.service.js';
 
 export function MailDetails() {
     const [mail, setMail] = useState(null)
@@ -31,12 +32,13 @@ export function MailDetails() {
             })
     }
 
+
     return (
         <section className="mail-container">
            {mail && <div className="mail-info-container">
             <h2>{mail.subject}</h2>
             <p>{mail.body}</p>
-            <h5>today</h5>
+            <h5>{utilService.getFormattedDate(mail.sentAt)}</h5>
             <h5>to: {mail.to}</h5>
             <Link to={`/mail`}>Go Back</Link>
             <button onClick={() => onRemoveMail(mail.id)}>Delete mail</button>
