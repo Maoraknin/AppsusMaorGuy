@@ -1,6 +1,7 @@
 const { useState, useEffect } = React
 
 import { NoteList } from "../cmps/note-list.jsx"
+import { NoteCreator } from "../cmps/note-creator.jsx"
 import { noteService } from "../services/note.service.js"
 
 
@@ -17,18 +18,20 @@ export function NoteIndex() {
         })
     }
 
+    function saveNote(note){
+        noteService.save(note).then(note => {
+            notes.push(note)
+            setNotes([...notes])
+        })
 
-
-
-
-
-
-
-
+    }
 
 
 
     return <section>
+        <div>
+            <NoteCreator saveNote={saveNote} />
+        </div>
         <div>
             <NoteList notes={notes} />
         </div>

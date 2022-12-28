@@ -1,4 +1,4 @@
-import { NotePreview } from "./not-previews.jsx"
+import { NotePreview } from "./note-previews.jsx"
 
 
 export function NoteList({ notes }) {
@@ -6,9 +6,9 @@ export function NoteList({ notes }) {
     return (
         <div className="memo-container">
             {
-                notes.map(note => <div className="memo" key={note.id}>
+                notes.map(note => 
                     <NotePreview note={note} />
-                </div>)
+                )
             }
         </div>
 

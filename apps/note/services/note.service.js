@@ -6,6 +6,10 @@ _createNotes()
 
 export const noteService = {
   query,
+  get,
+  remove,
+  save,
+  getNoteText
 }
 
 
@@ -18,20 +22,30 @@ function query() {
     })
 }
 
+function get(noteId) {
+  return storageService.get(NOTE_KEY, noteId)
+}
+
+function remove(noteId) {
+  return storageService.remove(NOTE_KEY, noteId)
+}
+
+function save(note) {
+  if (note.id) return storageService.put(NOTE_KEY, note)
+  else return storageService.post(NOTE_KEY, note)
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+function getNoteText(txt) {
+  return {
+    type: "note-txt",
+    isPinned: false,
+    info: {
+      txt: txt
+    }
+  }
+}
 
 
 function _createNotes() {
