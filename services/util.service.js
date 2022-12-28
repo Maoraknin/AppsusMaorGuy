@@ -6,8 +6,9 @@ export const utilService = {
     padNum,
     getDayName,
     getMonthName,
+    saveToStorage,
+    loadFromStorage
 }
-
 function makeId(length = 6) {
     var txt = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -59,4 +60,14 @@ function getMonthName(date) {
         "July", "August", "September", "October", "November", "December"
     ]
     return monthNames[date.getMonth()]
+}
+
+
+function saveToStorage(key, val) {
+    localStorage.setItem(key, JSON.stringify(val))
+}
+
+function loadFromStorage(key) {
+    var val = localStorage.getItem(key)
+    return JSON.parse(val)
 }

@@ -1,0 +1,12 @@
+.memo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+  /* background-color: red; */
+
+}
+
+.memo {
+  border: 1px solid black;
+
+}
