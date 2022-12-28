@@ -1,0 +1,8 @@
+.mail-preview{
+    display: grid;
+    grid-template-columns: 100px 1fr 150px;
+}
+
+.mail-preview-body{
+    color: rgb(130, 130, 130);
+}
