@@ -7,6 +7,11 @@
     background-color: rgb(255, 255, 255);
 }
 
+.mail-preview:hover{
+    padding: 0.6rem;
+    padding-bottom: 0.3rem;
+}
+
 .mail-subject.read,
 .mail-sender.read,
 .mail-date.read{

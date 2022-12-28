@@ -9,6 +9,7 @@
 .icon{
 font-size: 1.2rem;
 align-self: center;
+cursor: pointer;
 
 }
 
@@ -18,7 +19,7 @@ align-self: center;
     gap: 10px;
     margin-bottom: 0.5rem;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .compose-btn{

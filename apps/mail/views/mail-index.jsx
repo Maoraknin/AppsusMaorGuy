@@ -12,10 +12,11 @@ export function MailIndex() {
 
     const [mails, setMails] = useState([])
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
+    const [isComposeClicked, setIsComposeClicked] = useState(false)
 
     useEffect(() => {
         loadMails()
-    }, [filterBy])
+    }, [filterBy, mails])
 
     function loadMails() {
         mailService.query(filterBy).then((mails) => {
@@ -27,13 +28,25 @@ export function MailIndex() {
         setFilterBy(filterByFromFilter)
     }
 
+    function addMail(newMail){
+        mailService.save(newMail).then((mail) => {
+            mails.unshift(mail)
+            setMails(mails)
+        })
+    }
+
+    function onToggleCompose(){
+        setIsComposeClicked(!isComposeClicked)
+    }
+
+
 
     return <main className="mail-index-container">
         <MailFilter onSetFilter={onSetFilter}/>
         <section className="mail-container">
-            <MailFolderList onSetFilter={onSetFilter}/>
+            <MailFolderList onSetFilter={onSetFilter} onToggleCompose={onToggleCompose}/>
             <MailList mails={mails} />
-            <MailCompose />
+           {isComposeClicked && <MailCompose addMail={addMail} onToggleCompose={onToggleCompose}/>}
         </section>
     </main>
 }

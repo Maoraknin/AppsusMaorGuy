@@ -13,6 +13,7 @@ export const mailService = {
   save,
   // getEmptyBook,
   getDefaultFilter,
+  getEmptyMailToSend,
   // addReview,
   // getNextBookId,
   // getPrevBookId
@@ -42,9 +43,9 @@ function save(mail) {
 function query(filterBy) {
   return storageService.query(MAIL_KEY)
     .then(mails => {
-      if (filterBy.subject) {
-        const regex = new RegExp(filterBy.subject, 'i')
-        mails = mails.filter(mail => regex.test(mail.subject))
+      if (filterBy.txt) {
+        const regex = new RegExp(filterBy.txt, 'i')
+        mails = mails.filter(mail => (regex.test(mail.subject) || regex.test(mail.body) || regex.test(mail.from)))
       }
       if (filterBy.isRead !== '') {
         mails = mails.filter(mail => {
@@ -53,13 +54,11 @@ function query(filterBy) {
       }
       if (filterBy.isStared) {
         mails = mails.filter(mail => {
-          console.log('mail.isStared:',mail.isStared)
           return mail.isStared
         })
       }
       if (filterBy.status) {
         mails = mails.filter(mail => {
-          console.log('mail.status === filterBy.status:', mail.status === filterBy.status)
           return mail.status === filterBy.status
         })
       }
@@ -68,7 +67,21 @@ function query(filterBy) {
 }
 
 function getDefaultFilter() {
-  return { subject: '', isRead: '' }
+  return { txt: '', isRead: '' }
+}
+
+function getEmptyMailToSend(){
+  return {
+    subject,
+    from: 'Maor',
+    fromEmail: 'maoraknin125@gmail.com',
+    body,
+    isRead: false,
+    sentAt: Date.now(),
+    to,
+    status: 'sent',
+    isStared: false
+  }
 }
 
 

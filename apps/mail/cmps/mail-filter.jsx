@@ -16,7 +16,6 @@ export function MailFilter({ onSetFilter }) {
         if(value === 'false') value = false
         else if(value === 'true') value = true
         setFilterBy((prevFilter) => {
-           console.log('value:',value)
             return { ...prevFilter, [field]: value }
         })
     }
@@ -25,11 +24,11 @@ export function MailFilter({ onSetFilter }) {
     return <section className="mail-filter">
         <form className="filter-form">
                 <input type="text"
-                    id="subject"
-                    name="subject"
+                    id="txt"
+                    name="txt"
                     className="search-input"
                     placeholder="Search mail"
-                    value={filterBy.subject}
+                    value={filterBy.txt}
                     onChange={handleChange}
                 />
                 <select name="isRead" id="isRead" onChange={handleChange}>

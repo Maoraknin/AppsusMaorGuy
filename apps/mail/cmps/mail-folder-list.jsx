@@ -2,7 +2,7 @@ const { useState, useEffect } = React
 
 import { mailService } from '../services/mail.service.js';
 
-export function MailFolderList({ onSetFilter }) {
+export function MailFolderList({ onSetFilter, onToggleCompose }) {
 
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
     const [isCheckedStar, setIsCheckedStar] = useState(false)
@@ -27,7 +27,7 @@ export function MailFolderList({ onSetFilter }) {
     }
 
     return <div className="side-bar-container">
-        <button className="compose-btn"><span className="material-symbols-outlined">edit</span>Compose</button>
+        <button className="compose-btn" onClick={onToggleCompose}><span className="material-symbols-outlined">edit</span>Compose</button>
         <ul className="folder-list-container">
             <li onClick={() => onSetListFilter('inbox')} className="folder-list-item"><span className="material-symbols-outlined icon">inbox</span>Inbox</li>
             <li onClick={() => onStarFilter(!isCheckedStar)} className="folder-list-item"><span className="material-symbols-outlined icon">star</span>Stared</li>
