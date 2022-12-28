@@ -20,7 +20,16 @@ export function MailDetails() {
                 navigate('/mail')
             })
     }
-    console.log('mail:', mail)
+
+    function onRemoveMail(mailId) {
+        mailService.remove(mailId).then(() => {
+            navigate('/mail')
+        })
+            .catch((err) => {
+                console.log('Had issues removing', err)
+                showErrorMsg('Could not delete mail, try again please!')
+            })
+    }
 
     return (
         <section className="mail-container">
@@ -29,9 +38,9 @@ export function MailDetails() {
             <p>{mail.body}</p>
             <h5>today</h5>
             <h5>to: {mail.to}</h5>
+            <Link to={`/mail`}>Go Back</Link>
+            <button onClick={() => onRemoveMail(mail.id)}>Delete mail</button>
             </div>}
-
-            Hey
         </section>
     )
 

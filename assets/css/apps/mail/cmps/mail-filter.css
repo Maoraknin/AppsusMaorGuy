@@ -1,0 +1,9 @@
+
+.mail-filter{
+    display: flex;
+    justify-content: center;
+}
+
+.input-container{
+    display:inline-block;
+}

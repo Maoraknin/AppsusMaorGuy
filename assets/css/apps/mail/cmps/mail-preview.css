@@ -1,8 +1,39 @@
-.mail-preview{
+.mail-preview {
     display: grid;
     grid-template-columns: 100px 1fr 150px;
+    padding: 0.6rem;
+    font-weight: 700;
 }
 
-.mail-preview-body{
+.mail-subject{
+    /* font-weight: 700; */
+
+}
+
+
+
+.mail-preview.read {
+    background-color: #f2f6fc;
+    font-weight: 400;
+}
+
+.mail-preview:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+
+
+.mail-preview-body {
     color: rgb(130, 130, 130);
+    font-weight: 400;
+
+}
+
+.mail-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
