@@ -12,7 +12,7 @@ export const mailService = {
     remove,
     save,
     // getEmptyBook,
-    // getDefaultFilter,
+    getDefaultFilter,
     // addReview,
     // getNextBookId,
     // getPrevBookId
@@ -20,9 +20,9 @@ export const mailService = {
 
 
 
-function query() {
-    return storageService.query(MAIL_KEY) 
-  }
+// function query() {
+//     return storageService.query(MAIL_KEY) 
+//   }
 
 
   function get(mailId) {
@@ -39,27 +39,26 @@ function query() {
   }
 
 
-// function query(filterBy) {
-//     return storageService.query(BOOK_KEY)
-//       .then(books => {
-//         if (filterBy.title) {
-//           const regex = new RegExp(filterBy.title, 'i')
-//           books = books.filter(book => regex.test(book.title))
-//         }
-//         if (filterBy.authors) {
-//           const regex = new RegExp(filterBy.authors, 'i')
-//           books = books.filter(book => book.authors.some(author => regex.test(author)))
-//         }
-  
-//         if (filterBy.minPrice) {
-//           books = books.filter(book => book.listPrice.amount >= filterBy.minPrice)
-//         }
-//         if (filterBy.isSale) {
-//           books = books.filter(book => book.listPrice.isOnSale === filterBy.isSale)
-//         }
-//         return books
-//       })
-//   }
+function query(filterBy) {
+    return storageService.query(MAIL_KEY)
+      .then(mails => {
+        if (filterBy.subject) {
+          const regex = new RegExp(filterBy.subject, 'i')
+          mails = mails.filter(mail => regex.test(mail.subject))
+        }
+        if (filterBy.isRead !== '') {
+          mails = mails.filter(mail => {
+            console.log('mail.isRead === filterBy.isRead:',mail.isRead === filterBy.isRead)
+           return mail.isRead === filterBy.isRead
+          })
+        }
+        return mails
+      })
+  }
+
+  function getDefaultFilter() {
+    return { subject: '', isRead: '' }
+  }
 
 
 function _createMails() {
@@ -70,29 +69,52 @@ function _createMails() {
                 id: 'e101',
                 subject: 'Miss you!',
                 from: 'Maor',
-                body: 'Would like to catch up sometimes',
+                fromEmail: 'maoraknin125@gmail.com',
+                body: 'Would like to catch up sometimes i missed you you stupid little man how are you ',
                 isRead: false,
-                sentAt: 1551133934321,
+                sentAt: 1672142449000,
                 to: 'momo@momo.com'
             },
             {
                 id: 'e102',
                 subject: 'Love you!',
                 from: 'Maor',
+                fromEmail: 'maoraknin125@gmail.com',
                 body: 'Would LOVE to catch up sometimes',
                 isRead: true,
-                sentAt: 1551133930594,
+                sentAt: 1672056049000,
                 to: 'momo@momo.com'
             },
             {
                 id: 'e103',
                 subject: 'Fuck you!',
                 from: 'Maor',
+                fromEmail: 'maoraknin125@gmail.com',
                 body: 'Would NOT want to catch up sometimes',
                 isRead: false,
-                sentAt: 1551133931234,
+                sentAt: 1671883249000,
                 to: 'momo@momo.com'
-            }
+            },
+            {
+              id: 'e104',
+              subject: 'Hey you!',
+              from: 'Maor',
+              fromEmail: 'maoraknin125@gmail.com',
+              body: 'How you Doin',
+              isRead: true,
+              sentAt: 1671883239000,
+              to: 'momo@momo.com'
+          },
+          {
+            id: 'e105',
+            subject: 'not you!',
+            from: 'Maor',
+            fromEmail: 'maoraknin125@gmail.com',
+            body: 'wrong email... i am a long long span to check if the css shit is still working and how is it',
+            isRead: true,
+            sentAt: 1671883149000,
+            to: 'momo@momo.com'
+        }
 
         ]
     }
