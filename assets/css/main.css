@@ -10,12 +10,12 @@
 @import './basics/layout.css';
 
 /* Views */
-/* @import './views/home.css'; */
+@import './views/home.css';
 
 @import './apps/note/views/note-app.css';
 
 @import './apps/mail/views/mail-index.css';
-@import './apps/mail/views/mail-list.css';
+@import './apps/mail/views/mail-Details.css';
 
 /* Cmps */
 
@@ -24,6 +24,8 @@
 
 @import './apps/mail/cmps/mail-list.css';
 @import './apps/mail/cmps/mail-folder-list.css';
+@import './apps/mail/cmps/mail-details-header.css';
+@import './apps/mail/cmps/mail-table-header.css';
 @import './apps/mail/cmps/mail-filter.css';
 @import './apps/mail/cmps/mail-preview.css';
 @import './apps/mail/cmps/mail-compose.css';

@@ -1,0 +1,26 @@
+
+.home-text-container{
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home-title{
+    font-family: heading-now;
+    font-size: 3rem;
+}
+.home-text{
+    font-family: roboto;
+    font-size: 1.7rem;
+}
+
+.home-nav-container{
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+}
+
+.home-nav-container img{
+    width: 400px;
+}

@@ -9,6 +9,7 @@ export const utilService = {
     saveToStorage,
     loadFromStorage,
     getFormattedDate,
+    getFormattedDay,
     // isBeforeToday
 }
 function makeId(length = 6) {
@@ -56,37 +57,48 @@ function getDayName(date, locale) {
     return date.toLocaleDateString(locale, { weekday: 'long' })
 }
 
-function getFormattedDate(timestamp) {
+function getFormattedDay(timestamp) {
     const date = new Date(timestamp)
     const isToday = _isBeforeToday(date)
-    if(isToday){
+    if (isToday) {
         return date.toLocaleTimeString();
     }
-    
-    const yyyy = date.getFullYear();
-    let mm = date.getMonth() + 1; // Months start at 0!
+
     let dd = date.getDate();
+
+    if (dd < 10) dd = '0' + dd;
+
+    return (dd)
+
+}
+
+function getFormattedDate(timestamp) {
+    const today = new Date();
+    const yyyy = today.getFullYear()
+    let mm = today.getMonth() + 1
+    let dd = today.getDate()
 
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;
 
-    return ( dd + '/' + mm + '/' + yyyy)
+    return dd + '/' + mm + '/' + yyyy;
 
 }
 
 function _isBeforeToday(date) {
     const today = new Date();
-  
+
     today.setHours(0, 0, 0, 0);
-  
+
     return date > today;
-  }
+}
 
 
 
-function getMonthName(date) {
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
+function getMonthName(timestamp) {
+    const date = new Date(timestamp)
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ]
     return monthNames[date.getMonth()]
 }

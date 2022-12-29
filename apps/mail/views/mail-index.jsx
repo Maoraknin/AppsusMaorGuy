@@ -36,16 +36,29 @@ export function MailIndex() {
     }
 
     function onToggleCompose(){
-        setIsComposeClicked(!isComposeClicked)
+        setIsComposeClicked((prevState) => !prevState)
     }
 
+    function setStared(mail){
+        console.log('mail:',mail)
+        mail.isStared = !mail.isStared
+        mailService.save(mail)
+    }
+
+    function removeMail(mailId){
+        mailService.remove(mailId)
+            .catch((err) => {
+                console.log('Had issues removing', err)
+                showErrorMsg('Could not delete mail, try again please!')
+            })
+    }
 
 
     return <main className="mail-index-container">
         <MailFilter onSetFilter={onSetFilter}/>
         <section className="mail-container">
             <MailFolderList onSetFilter={onSetFilter} onToggleCompose={onToggleCompose}/>
-            <MailList mails={mails} />
+            <MailList mails={mails} setStared={setStared} removeMail={removeMail} onSetFilter={onSetFilter}/>
            {isComposeClicked && <MailCompose addMail={addMail} onToggleCompose={onToggleCompose}/>}
         </section>
     </main>

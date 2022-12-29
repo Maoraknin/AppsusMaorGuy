@@ -13,8 +13,6 @@ export function MailFilter({ onSetFilter }) {
 
     function handleChange({ target }) {
         let { value, name: field} = target
-        if(value === 'false') value = false
-        else if(value === 'true') value = true
         setFilterBy((prevFilter) => {
             return { ...prevFilter, [field]: value }
         })
@@ -31,11 +29,6 @@ export function MailFilter({ onSetFilter }) {
                     value={filterBy.txt}
                     onChange={handleChange}
                 />
-                <select name="isRead" id="isRead" onChange={handleChange}>
-                    <option value=''>All</option>
-                    <option value={false}>unread</option>
-                    <option value={true}>read</option>
-                </select>
         </form>
     </section >
 }

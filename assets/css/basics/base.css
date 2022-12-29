@@ -48,3 +48,7 @@ img {
 .app{
   height: 100%;
 }
+
+.material-symbols-outlined{
+  cursor: pointer;
+}

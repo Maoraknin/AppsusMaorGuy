@@ -1,0 +1,27 @@
+ 
+  .mail-details-main-container{
+    display: flex;
+    height: 90%;
+    background-color: #f2f7fd;
+    justify-content: center;
+    align-items: center;
+    font-family: roboto;
+ }
+ 
+ 
+ .mail-details-container{
+    background-color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    height: 90%;
+    width: 80%;
+ }
+
+ .details-email,
+ .details-date{
+    color: rgb(170, 170, 170);
+ }
+
+ .mails-details-body{
+    padding-top: 30px;
+ }

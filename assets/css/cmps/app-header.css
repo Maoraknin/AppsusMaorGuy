@@ -1,24 +1,43 @@
 header {
-    background: lightcyan;
-    border-bottom: 2px solid white;
+    background: #c2e7ff;
 }
 
 .app-header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+}
+
+.app-header .app-header-logo{
+    font-family: heading-now;
+    font-size: 2.3rem;
+    margin: 0;
+    align-self: center;
+    padding-left: 2rem;
+    font-weight: 600;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2rem;
 }
 
 nav a {
     margin: .5em;
+    font-family: roboto;
+    margin: 0;
+    padding: 1.5rem 2rem;
+}
+
+nav a:hover{
+    background: #b4d7ef;
 }
 
 nav a:active {
-    color: purple;
+    color: darkblue;
 }
 
-nav a.active {
-    color: darkblue;
+nav a.active { 
     font-weight: bold;
-    text-decoration: overline;
 }

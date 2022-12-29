@@ -4,6 +4,10 @@ import { storageService } from '../../../services/async-storage.service.js'
 
 
 const MAIL_KEY = 'mailDB'
+const loggedinUser = {
+  email: 'maoraknin125@appsus.com',
+  fullname: 'Maor Aknin'
+ }
 _createMails()
 
 export const mailService = {
@@ -47,7 +51,7 @@ function query(filterBy) {
         const regex = new RegExp(filterBy.txt, 'i')
         mails = mails.filter(mail => (regex.test(mail.subject) || regex.test(mail.body) || regex.test(mail.from)))
       }
-      if (filterBy.isRead !== '') {
+      if (filterBy.isRead !== null) {
         mails = mails.filter(mail => {
           return mail.isRead === filterBy.isRead
         })
@@ -67,14 +71,14 @@ function query(filterBy) {
 }
 
 function getDefaultFilter() {
-  return { txt: '', isRead: '' }
+  return { txt: '', isRead: null, status: null }
 }
 
 function getEmptyMailToSend(){
   return {
     subject,
-    from: 'Maor',
-    fromEmail: 'maoraknin125@gmail.com',
+    from: loggedinUser.fullname,
+    fromEmail: loggedinUser.email,
     body,
     isRead: false,
     sentAt: Date.now(),
@@ -92,60 +96,60 @@ function _createMails() {
       {
         id: 'e101',
         subject: 'Miss you!',
-        from: 'Maor',
-        fromEmail: 'maoraknin125@gmail.com',
+        from: 'Shuki',
+        fromEmail: 'momo@momo.com',
         body: 'Would like to catch up sometimes i missed you you stupid little man how are you ',
         isRead: false,
         sentAt: 1672228849000,
-        to: 'momo@momo.com',
+        to: loggedinUser.email,
         status: 'inbox',
         isStared: true
       },
       {
         id: 'e102',
         subject: 'Love you!',
-        from: 'Maor',
-        fromEmail: 'maoraknin125@gmail.com',
+        from: 'Yehuda',
+        fromEmail: 'yehuda223@gmail.com',
         body: 'Would LOVE to catch up sometimes',
         isRead: true,
         sentAt: 1672056049000,
-        to: 'momo@momo.com',
+        to: loggedinUser.email,
         status: 'inbox',
         isStared: false
       },
       {
         id: 'e103',
         subject: 'Fuck you!',
-        from: 'Maor',
-        fromEmail: 'maoraknin125@gmail.com',
+        from: loggedinUser.fullname,
+        fromEmail: loggedinUser.email,
         body: 'Would NOT want to catch up sometimes',
         isRead: false,
         sentAt: 1671883249000,
-        to: 'momo@momo.com',
+        to: 'noa221100@gmail.com',
         status: 'sent',
         isStared: false
       },
       {
         id: 'e104',
         subject: 'Hey you!',
-        from: 'Maor',
-        fromEmail: 'maoraknin125@gmail.com',
+        from: 'Tal',
+        fromEmail: 'taltul125@gmail.com',
         body: 'How you Doin',
         isRead: true,
         sentAt: 1671883239000,
-        to: 'momo@momo.com',
+        to: loggedinUser.email,
         status: 'inbox',
         isStared: true
       },
       {
         id: 'e105',
         subject: 'not you!',
-        from: 'Maor',
-        fromEmail: 'maoraknin125@gmail.com',
-        body: 'wrong email... i am a long long span to check if the css shit is still working and how is it',
+        from: loggedinUser.fullname,
+        fromEmail: loggedinUser.email,
+        body: 'wrong email... you sent me a long long span to check if the css shit is still working and how is it',
         isRead: true,
         sentAt: 1671883149000,
-        to: 'momo@momo.com',
+        to: 'makemoney@momo.com',
         status: 'sent',
         isStared: true
       }

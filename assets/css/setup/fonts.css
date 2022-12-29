@@ -5,8 +5,13 @@
 }
 
 @font-face {
-    font-family: roboto-medium;
+    font-family: heading-now;
     src: url("../../fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: roboto-medium;
+    src: url("../../fonts/HeadingNowTrial-05Medium.ttf");
 }
 
 @font-face {

@@ -1,14 +1,22 @@
 
+.mail-index-container{
+    /* display: grid;
+    grid-template-columns: 200px 1fr;
+    background-color: #f2f6fc; */
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f6fc;
+    height: 90%;
+    font-family: roboto;
+}
+
 .mail-container{
     display: grid;
     grid-template-columns: 200px 1fr;
-    /* background-color: #f2f6fc; */
 }
 
-.mail-index-container{
-    /* display: grid;
-    grid-template-columns: 200px 1fr; */
-    background-color: #f2f7fd;
-    min-height: 90%;
-    font-family: roboto;
+@media (max-width: 560px) {
+    .mail-container{
+        grid-template-columns: 130px 1fr;
+    }
 }
