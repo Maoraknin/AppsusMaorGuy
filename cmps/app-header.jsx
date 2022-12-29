@@ -4,7 +4,7 @@ export function AppHeader() {
 
     return <header className="app-header">
         <Link to="/" className="app-header-logo">
-        <img src="/../assets/svg/horse.svg" className="img-logo" /> Appsus
+        <img src="assets/svg/horse.svg" className="img-logo" /> Appsus
         </Link>
         <nav>
             <NavLink to="/">Home</NavLink>
