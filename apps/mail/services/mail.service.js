@@ -18,6 +18,7 @@ export const mailService = {
   // getEmptyBook,
   getDefaultFilter,
   getEmptyMailToSend,
+  getEmptyMailToDraft,
   // addReview,
   // getNextBookId,
   // getPrevBookId
@@ -64,7 +65,7 @@ function query(filterBy) {
       if (filterBy.status) {
         if(filterBy.status === 'all'){
           mails = mails.filter(mail => {
-            return mail.status !== 'trash'
+            return (mail.status !== 'trash' && mail.status !== 'draft')
           })
         }else{
           mails = mails.filter(mail => {
@@ -82,14 +83,28 @@ function getDefaultFilter() {
 
 function getEmptyMailToSend(){
   return {
-    subject,
+    subject: '',
     from: loggedinUser.fullname,
     fromEmail: loggedinUser.email,
-    body,
+    body: '',
     isRead: false,
     sentAt: Date.now(),
-    to,
+    to: '',
     status: 'sent',
+    isStared: false
+  }
+}
+
+function getEmptyMailToDraft(){
+  return {
+    subject: '',
+    from: loggedinUser.fullname,
+    fromEmail: loggedinUser.email,
+    body: '',
+    isRead: false,
+    sentAt: Date.now(),
+    to: '',
+    status: 'draft',
     isStared: false
   }
 }

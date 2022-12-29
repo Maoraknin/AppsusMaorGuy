@@ -33,6 +33,7 @@ export function MailFolderList({ onSetFilter, onToggleCompose }) {
             <li onClick={() => onSetListFilter('sent')} className={filterBy.status === 'sent' ? "folder-list-item checked" : "folder-list-item"}><span className="material-symbols-outlined icon">send</span>Sent</li>
             <li onClick={() => onStarFilter(!isCheckedStar)} className={isCheckedStar ? "folder-list-item checked" : "folder-list-item"}><span className="material-symbols-outlined icon">star</span>Stared</li>
             <li onClick={() => onSetListFilter('trash')} className={filterBy.status === 'trash' ? "folder-list-item checked" : "folder-list-item"}><span className="material-symbols-outlined icon">delete</span>Trash</li>
+            <li onClick={() => onSetListFilter('draft')} className={filterBy.status === 'draft' ? "folder-list-item checked" : "folder-list-item"}><span className="material-symbols-outlined icon">draft</span>Draft</li>
         </ul>
     </div>
 }
