@@ -62,16 +62,22 @@ function query(filterBy) {
         })
       }
       if (filterBy.status) {
-        mails = mails.filter(mail => {
-          return mail.status === filterBy.status
-        })
+        if(filterBy.status === 'all'){
+          mails = mails.filter(mail => {
+            return mail.status !== 'trash'
+          })
+        }else{
+          mails = mails.filter(mail => {
+            return mail.status === filterBy.status
+          })
+        }
       }
       return mails
     })
 }
 
 function getDefaultFilter() {
-  return { txt: '', isRead: null, status: null }
+  return { txt: '', isRead: null, status: 'all' }
 }
 
 function getEmptyMailToSend(){
@@ -147,6 +153,126 @@ function _createMails() {
         from: loggedinUser.fullname,
         fromEmail: loggedinUser.email,
         body: 'wrong email... you sent me a long long span to check if the css shit is still working and how is it',
+        isRead: true,
+        sentAt: 1671883149000,
+        to: 'makemoney@momo.com',
+        status: 'sent',
+        isStared: true
+      },
+      {
+        id: 'e106',
+        subject: 'Pukiii!!',
+        from: loggedinUser.fullname,
+        fromEmail: loggedinUser.email,
+        body: 'hey puki, tou are trully missed. we talk about you all the time in the course. come and visit when you have the chance.',
+        isRead: true,
+        sentAt: 1671883149000,
+        to: 'puki@momo.com',
+        status: 'sent',
+        isStared: true
+      },
+      {
+        id: 'e107',
+        subject: 'Job offer',
+        from: 'Momo' ,
+        fromEmail: 'makemoney@momo.com',
+        body: 'come work at our firm, good money and good hours, you can start on Mmonday!',
+        isRead: false,
+        sentAt: 1671883149000,
+        to: loggedinUser.email,
+        status: 'inbox',
+        isStared: false
+      },
+      {
+        id: 'e108',
+        subject: 'LAST CALL!!!',
+        from: 'School',
+        fromEmail: 'school@momo.com',
+        body: 'you need to deliver your work untill 10pm or we will give you an F, your choise...',
+        isRead: true,
+        sentAt: 1671883149000,
+        to: loggedinUser.email,
+        status: 'inbox',
+        isStared: false
+      },
+      {
+        id: 'e109',
+        subject: 'Come sit with us',
+        from: 'Simha',
+        fromEmail: 'simha@momo.com',
+        body: 'we are sitting in the park tonight, you are more then wellcome and we will love to have you in this meeting',
+        isRead: false,
+        sentAt: 1671883149000,
+        to: loggedinUser.email,
+        status: 'inbox',
+        isStared: true
+      },
+      {
+        id: 'e110',
+        subject: 'about yesterday',
+        from: loggedinUser.fullname,
+        fromEmail: loggedinUser.email,
+        body: 'hey i had fun yesterday, would like to see you again',
+        isRead: true,
+        sentAt: 1671883149000,
+        to: 'hagar@momo.com',
+        status: 'sent',
+        isStared: true
+      },
+      {
+        id: 'e111',
+        subject: 'Thailand',
+        from: 'ISTA',
+        fromEmail:'ista@momo.com',
+        body: 'come with us and have the best vecation of your life in the cheapest price possible',
+        isRead: true,
+        sentAt: 1671883149000,
+        to:  loggedinUser.email,
+        status: 'inbox',
+        isStared: true
+      },
+      {
+        id: 'e112',
+        subject: 'hey shuki!',
+        from: loggedinUser.fullname,
+        fromEmail: loggedinUser.email,
+        body: 'i thought about yesterday and i am very upset... you need to say you are sorry for what you did!',
+        isRead: true,
+        sentAt: 1671883149000,
+        to: 'shuki@momo.com',
+        status: 'sent',
+        isStared: true
+      },
+      {
+        id: 'e113',
+        subject: 'Job offer!',
+        from: 'Zimbabua',
+        fromEmail:'makemoney@momo.com',
+        body: 'if you want to make shit loads of money come to us and we will make you rich! we pay very good and you can have the best life possible!',
+        isRead: true,
+        sentAt: 1671883149000,
+        to:  loggedinUser.email,
+        status: 'inbox',
+        isStared: false
+      },
+      {
+        id: 'e114',
+        subject: 'SPAN!',
+        from: 'elad ashuah',
+        fromEmail:'makemoney@momo.com',
+        body: 'if you happy and you know it clap your hands so be happy and dont be un happy',
+        isRead: false,
+        sentAt: 1671883149000,
+        to:  loggedinUser.email,
+        status: 'inbox',
+        isStared: false
+      },
+      {
+        id: 'e115',
+        subject: 'How are you!',
+        from: loggedinUser.fullname,
+        fromEmail: loggedinUser.email,
+        body: 'i have missed you and just wanted to let you know that every thing is ok so dont worry and be happy',
         isRead: true,
         sentAt: 1671883149000,
         to: 'makemoney@momo.com',

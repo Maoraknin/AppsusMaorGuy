@@ -36,21 +36,38 @@ export function MailIndex() {
     }
 
     function onToggleCompose(){
-        setIsComposeClicked((prevState) => !prevState)
+        setIsComposeClicked(!isComposeClicked)
     }
 
     function setStared(mail){
-        console.log('mail:',mail)
         mail.isStared = !mail.isStared
         mailService.save(mail)
     }
 
-    function removeMail(mailId){
-        mailService.remove(mailId)
+    function removeMail(mail){
+        if(mail.status === 'trash'){
+            mailService.remove(mail.id)
             .catch((err) => {
                 console.log('Had issues removing', err)
                 showErrorMsg('Could not delete mail, try again please!')
             })
+        }else{
+            mail.status = 'trash'
+            mailService.save(mail)
+        }
+        
+    }
+
+    function setReadMail(mail){
+        mail.isRead = false
+        mailService.save(mail)
+        
+
+    }
+
+    function setToggleRead(mail){
+        mail.isRead = !mail.isRead
+        mailService.save(mail)
     }
 
 
@@ -58,7 +75,7 @@ export function MailIndex() {
         <MailFilter onSetFilter={onSetFilter}/>
         <section className="mail-container">
             <MailFolderList onSetFilter={onSetFilter} onToggleCompose={onToggleCompose}/>
-            <MailList mails={mails} setStared={setStared} removeMail={removeMail} onSetFilter={onSetFilter}/>
+            <MailList mails={mails} setStared={setStared} removeMail={removeMail} onSetFilter={onSetFilter} setReadMail={setReadMail} setToggleRead={setToggleRead}/>
            {isComposeClicked && <MailCompose addMail={addMail} onToggleCompose={onToggleCompose}/>}
         </section>
     </main>

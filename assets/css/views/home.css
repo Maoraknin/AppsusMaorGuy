@@ -18,9 +18,9 @@
 .home-nav-container{
     display: flex;
     justify-content: center;
-    gap: 6rem;
+    gap: 30px;
 }
 
 .home-nav-container img{
-    width: 400px;
+    width: 200px;
 }

@@ -1,4 +1,5 @@
 
+// import { utilService } from '../../../services/util.service.js';
 import { mailService } from '../services/mail.service.js';
 
 export function MailCompose({addMail, onToggleCompose}) {
@@ -21,7 +22,8 @@ export function MailCompose({addMail, onToggleCompose}) {
 
     }
 
-    return <div className="compose-modal">
+
+    return <div className="compose-modal animate__animated animate__slideInUp">
         <div className="compose-header"><p>New Messege</p><span className="close-compose" onClick={onToggleCompose}>X</span></div>
         <form onSubmit={onAddMail} className="compose-form">
             <input type="text"
