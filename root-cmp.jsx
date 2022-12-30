@@ -12,8 +12,6 @@ import { MailIndex } from "./apps/mail/views/mail-index.jsx"
 import { MailDetails } from "./apps/mail/views/mail-details.jsx"
 import { NoteIndex } from "./apps/note/views/note-index.jsx"
 
-
-
 export function App() {
     return <Router>
         <section className="app">

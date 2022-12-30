@@ -1,8 +1,40 @@
 .memo-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 10px;
-  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.note-preview {
+  min-width: 200px;
+  position: relative;
+  padding-bottom: 30px;
+  min-height: 100px;
+  max-height: 300px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, .35) 0 5px 15px;
+  padding: 15px;
+}
+
+.note-actions {
+  position: absolute;
+  bottom: 0;
+}
+
+.note-img {
+  height: 100%;
+
+}
+
+.image-container {
+  height: 80%;
+}
+
+.image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 
 }
 
