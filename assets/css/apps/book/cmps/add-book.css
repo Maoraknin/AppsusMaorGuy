@@ -1,0 +1,8 @@
+
+.add-book-form div{
+    display: grid;
+    justify-items: left;
+    grid-template-columns: 130px 200px;
+    margin-bottom: 0.6rem;
+    align-items: center;
+}

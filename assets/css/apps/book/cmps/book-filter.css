@@ -1,0 +1,17 @@
+.book-filter {
+    background-color: var(--clr2bg);
+    padding: 1rem 0 0;
+}
+
+.book-filter .filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    
+}
+
+.input-container{
+    display: grid;
+    justify-items: left;
+    grid-template-columns: 80px 200px;
+    margin-bottom: 1rem;
+}
