@@ -44,7 +44,7 @@ export function AddUserBook() {
 
 
     return <section className="add-book">
-        <h2>Add new book to our App!</h2>
+        <h2 className="add-book-title">Add new book to our App!</h2>
         <form onSubmit={onAddBook} className="add-book-form">
             <div>
                 <label htmlFor="title">Title : </label>
@@ -76,16 +76,7 @@ export function AddUserBook() {
                 onChange={handleChange}
             />
             </div>
-            <div>
-                <label htmlFor="publishedDate">Published at : </label>
-                <input type="date"
-                    name="publishedDate"
-                    id="publishedDate"
-                    placeholder="Enter publish date..."
-                    value={addedBook.publishedDate}
-                    onChange={handleChange}
-                />
-            </div>
+           
             <div>
                 <label htmlFor="description">Description : </label>
                 <input type="text"
@@ -157,6 +148,16 @@ export function AddUserBook() {
                 />
             </div>
             <div>
+                <label htmlFor="publishedDate">Published at : </label>
+                <input type="date"
+                    name="publishedDate"
+                    id="publishedDate"
+                    placeholder="Enter publish date..."
+                    value={addedBook.publishedDate}
+                    onChange={handleChange}
+                />
+            </div>
+            <div>
                 <label htmlFor="isOnSale">On sale?: </label>
                 <input type="checkbox"
                     name="isOnSale"
@@ -166,8 +167,8 @@ export function AddUserBook() {
                     onChange={handleChange}
                 />
             </div>
-            <div>
-                <button>Add Book!</button>
+            <div className="add-actions-container">
+                <button className="add-book-btn">Add Book!</button>
                 <Link to="/book">Cancel</Link>
                 {/* <button type="button"></button> */}
             </div>

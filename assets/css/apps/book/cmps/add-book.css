@@ -1,8 +1,90 @@
 
+.add-main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.6rem;
+    background-color: #f2f6fc;
+    min-height: 90vh;
+}
+
+.add-container{
+    width: 90%;
+    min-height: 80vh;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    justify-content:space-between;
+
+}
+
 .add-book-form div{
     display: grid;
     justify-items: left;
     grid-template-columns: 130px 200px;
     margin-bottom: 0.6rem;
     align-items: center;
+}
+
+.add-book-title{
+  padding-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.add-book-btn{
+    background-color: #e6efff;
+    padding: 0.5rem;
+    border: 1px solid  #dbe7ff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.add-book-btn:hover{
+    background-color: #d0e1ff;
+}
+
+.add-actions-container{
+    margin-top: 2rem;
+}
+
+.google-add-form input{
+    padding: 0.5rem;
+    background-color: #e6efff;
+    border-radius: 5px;
+    border: 1px solid  #dbe7ff;
+}
+
+.google-add-form input:focus-visible{
+    outline: none;
+}
+
+.google-book-list li{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.add-google-book-btn:hover{
+    background-color: rgb(237, 237, 237);
+    border-radius: 50%;
+
+}
+
+.add-from-btn-container{
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 20px;
+}
+
+.add-from-btn-container button{
+    background-color: #e6efff;
+    padding: 0.5rem;
+    border: 1px solid  #dbe7ff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    min-width: 8rem;
 }

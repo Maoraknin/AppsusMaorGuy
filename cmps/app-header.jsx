@@ -11,7 +11,7 @@ export function AppHeader() {
             <img src="assets/svg/horse.svg" className="img-logo" /> Appsus
         </Link>
         <span onClick={() => setIsClicked(!isClicked)} class="material-symbols-outlined menu">menu</span>
-        {isClicked && <div className="header-modal">
+        {isClicked && <div className="header-modal animate__animated animate__fadeInDown">
             <NavLink onClick={() => setIsClicked(!isClicked)} to="/book"><img src="assets/png/book.png"/></NavLink>
             <NavLink onClick={() => setIsClicked(!isClicked)} to="/mail"><img src="assets/png/email.png"/></NavLink>
             <NavLink onClick={() => setIsClicked(!isClicked)} to="/note"><img src="assets/png/note.png"/></NavLink>

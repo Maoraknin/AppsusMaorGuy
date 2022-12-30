@@ -13,3 +13,12 @@
     align-items: center;
     background-color: var(--clr1bg);
 }
+
+.add-book-container{
+    height: 70%;
+}
+
+.add-book-container img{
+    object-fit: contain;
+    cursor: pointer;
+}

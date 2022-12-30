@@ -66,7 +66,7 @@ export function AddBookFromGoogle() {
     }
 
     return <section className="google-add-books">
-        <h2>Enter Book Title: </h2>
+        <h2 className="add-book-title">Enter Book Title: </h2>
         <form className="google-add-form">
             <label htmlFor="title">Title : </label>
             <input type="text"
@@ -79,8 +79,9 @@ export function AddBookFromGoogle() {
 
         <ul className="google-book-list">
             {books.map(book => {
-                return <li><span>{book.title}</span><button onClick={() => onAddGoogleBook(book)}>➕</button></li>
+                return <li><span>{book.title}</span><span onClick={() => onAddGoogleBook(book)} class="material-symbols-outlined add-google-book-btn">add_circle</span></li>
             })}
         </ul>
     </section>
 }
+
