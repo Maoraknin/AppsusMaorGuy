@@ -12,10 +12,10 @@ export function AppHeader() {
         </Link>
         <span onClick={() => setIsClicked(!isClicked)} class="material-symbols-outlined menu">menu</span>
         {isClicked && <div className="header-modal">
-            <NavLink to="/book"><img src="assets/png/book.png"/></NavLink>
-            <NavLink to="/mail"><img src="assets/png/email.png"/></NavLink>
-            <NavLink to="/note"><img src="assets/png/note.png"/></NavLink>
-            <NavLink to="/about"><img src="assets/png/about.png"/></NavLink>
+            <NavLink onClick={() => setIsClicked(!isClicked)} to="/book"><img src="assets/png/book.png"/></NavLink>
+            <NavLink onClick={() => setIsClicked(!isClicked)} to="/mail"><img src="assets/png/email.png"/></NavLink>
+            <NavLink onClick={() => setIsClicked(!isClicked)} to="/note"><img src="assets/png/note.png"/></NavLink>
+            <NavLink onClick={() => setIsClicked(!isClicked)} to="/about"><img src="assets/png/about.png"/></NavLink>
 
         </div>}
         {/* <nav>
