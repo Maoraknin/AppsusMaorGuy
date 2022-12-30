@@ -1,18 +1,6 @@
 .mail-table{
     width: 100%;
     font-size: 0.8rem;
-    /* background-color: white;
-    padding: 10px 10px 0 10px; */
+    
 }
 
-.mail-table-header{
-    background-color: white;
-    padding: 0.4rem;
-    padding-left: 1rem;
-    border-top-left-radius: 1rem;
-    text-align: left;
-}
-
-.read-filter{
-    font-size: 2rem;
-}

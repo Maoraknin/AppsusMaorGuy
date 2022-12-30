@@ -1,0 +1,24 @@
+.book-list {
+    padding: 15px 0 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 15px;
+}
+
+.book-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr1bg);
+}
+
+.add-book-container{
+    height: 70%;
+}
+
+.add-book-container img{
+    object-fit: contain;
+    cursor: pointer;
+}

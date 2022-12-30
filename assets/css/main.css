@@ -29,3 +29,13 @@
 @import './apps/mail/cmps/mail-filter.css';
 @import './apps/mail/cmps/mail-preview.css';
 @import './apps/mail/cmps/mail-compose.css';
+
+/* Books */
+
+@import 'cmps/user-msg.css';
+@import './apps/book/cmps/star-rating.css';
+@import './apps/book/cmps/book-filter.css';
+@import './apps/book/cmps/book-list.css';
+@import './apps/book/cmps/add-book.css';
+@import './apps/book/cmps/book-preview.css';
+@import './apps/book/cmps/book-details.css';

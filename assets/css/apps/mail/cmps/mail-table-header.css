@@ -1,3 +1,21 @@
+
+.mail-table-header{
+    background-color: white;
+    padding: 0.4rem;
+    padding-left: 1rem;
+    border-top-left-radius: 1rem;
+   text-align: left;
+}
+
+.table-header-btn-container{
+    align-items: center;
+    gap: 10px;
+}
+
+.read-filter{
+    font-size: 2rem;
+}
+
 .read-filter-modal {
     position: absolute;
     z-index: 1;
@@ -16,4 +34,8 @@
 
 .read-filter-option:hover {
     background-color: rgb(229, 229, 229);
+}
+
+.refresh{
+    font-size: 1.6rem;
 }

@@ -10,7 +10,8 @@ export const utilService = {
     loadFromStorage,
     getFormattedDate,
     getFormattedDay,
-    animateCSS
+    animateCSS,
+    debounce
 }
 function makeId(length = 6) {
     var txt = ''
@@ -125,4 +126,12 @@ function animateCSS(el, animation) {
 
         el.addEventListener('animationend', handleAnimationEnd, { once: true })
     })
+}
+
+function debounce(func, timeout = 500) {
+    let timer
+    return (...args) => {
+        clearTimeout(timer)
+        timer = setTimeout(() => { func.apply(this, args) }, timeout)
+    }
 }

@@ -1,6 +1,7 @@
 header {
     background-color: #f2f6fc;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px, rgb(218, 220, 224) 0px -1px 0px 0px inset
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px, rgb(218, 220, 224) 0px -1px 0px 0px inset;
+    color: rgb(40, 40, 40);
 }
 
 .app-header {
@@ -9,6 +10,7 @@ header {
 }
 
 .app-header .app-header-logo{
+    
     font-family: heading-now;
     font-size: 2.3rem;
     margin: 0;
@@ -22,6 +24,38 @@ header {
 
 .img-logo{
     width: 50px;
+}
+
+.menu{
+    font-size: 3rem;
+    font-weight: 700;
+    /* padding-right: 2rem; */
+    margin: 0.3rem 1.5rem;
+    padding: 0.2rem;
+}
+
+.menu:hover{
+    background-color: #d8e8ff;
+    border-radius: 50%;
+}
+
+.header-modal{
+    padding: 1rem;
+    position: absolute;
+    background-color: #fafcff;
+    right: 2rem;
+    top: 4rem;
+    /* height: 200px;
+    width: 200px; */
+    display: grid;
+    grid-template-columns: 70px 70px;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px, rgba(0, 0, 0, 0.2) 0px 5px 5px -3px;
+    border-radius: 5px;
+}
+
+.header-modal img{
+    width: 100%;
 }
 
 nav{

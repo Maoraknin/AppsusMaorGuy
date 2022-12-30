@@ -1,0 +1,42 @@
+
+.book-title{
+    padding: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.filter-title{
+    /* padding: 2rem; */
+    font-size: 1.5rem;
+
+}
+
+.book-filter {
+    background-color: #f1f6ff;
+    padding: 1rem 0 0.5rem;
+}
+
+.book-filter .filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    
+}
+
+.input-container{
+    display: grid;
+    justify-items: left;
+    grid-template-columns: 80px 200px;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.input-container input{
+    padding: 0.5rem;
+    background-color: #e6efff;
+    border-radius: 10px;
+    border: 1px solid  #dbe7ff;
+}
+
+.input-container input:focus-visible{
+    outline: none;
+}
