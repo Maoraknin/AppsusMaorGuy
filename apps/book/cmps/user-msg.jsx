@@ -29,7 +29,7 @@ export function UserMsg() {
 
     if (!msg) return <span></span>
     return <div className={"user-msg " + msg.type}>
-        <button onClick={onCloseMsg}>X</button>
         {msg.txt}
+        <span onClick={onCloseMsg} class="material-symbols-outlined">close</span>
     </div>
 }

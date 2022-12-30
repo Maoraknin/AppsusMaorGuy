@@ -46,7 +46,9 @@ export function BookIndex() {
     return (
         <section className="book-index">
            <div className="main-layout">
-            <h1 className="book-title">Appsus book shop</h1>
+            <h1 className="book-title">Appsus book shop <span class="material-symbols-outlined">
+delete
+</span></h1>
                 <BookFilter onSetFilter={onSetFilter} />
 
                 {!isLoading && <BookList books={books} onRemoveBook={onRemoveBook}/>}
