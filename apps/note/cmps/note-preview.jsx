@@ -59,19 +59,22 @@ export function NotePreview({ type, note, editNote, removeNote, addNote }) {
   return (
     <section className='note-preview' style={{ backgroundColor: note.color ? note.color : 'lightblue' }}>
       {getNoteType(type)}
+      <div className='note-actions-container'>
       <div className='note-actions'>
-        <button onClick={() => removeNote(note.id)}>Remove</button>
-        <button onClick={duplicateNote}>Duplicate</button>
-        <button onClick={mailNote}>Mail</button>
-        <button onClick={handlePinNote}>{note.isPinned ? 'Unpin' : 'Pin'}</button>
-        <label htmlFor={"color" + note.id}>Color</label>
+      <span onClick={() => removeNote(note.id)} className="material-symbols-outlined">delete</span>
+      <span onClick={duplicateNote} className="material-symbols-outlined">content_copy</span>
+        {/* <button onClick={mailNote}>Mail</button> */}
+        <span onClick={handlePinNote} className={ note.isPinned ? "material-symbols-outlined pinned" : "material-symbols-outlined"}>push_pin</span>
+        <label htmlFor={"color" + note.id}><span class="material-symbols-outlined">palette</span></label>
         <input style={{ display: 'none' }} onChange={(e) => handleColorChange(e, note)} type="color" name="color" id={"color" + note.id} />
-        {note.type !== "note-todos" ? <button onClick={() => setEditMode(prev => !prev)}>Edit</button> : null}
+        {note.type !== "note-todos" ? <span onClick={() => setEditMode(prev => !prev)} class="material-symbols-outlined">edit</span> : null}
         {editMode ? <NoteEdit note={note} editNote={editNote} setEditMode={setEditMode} /> : null}
+      </div>
       </div>
     </section>
   )
 }
+
 
 
 

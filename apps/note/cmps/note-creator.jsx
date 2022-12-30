@@ -27,27 +27,29 @@ export function NoteCreator({ addNote }) {
     }
 
     return (
-        <form onSubmit={handleSubmitNote}>
-            <div>
-                <input type="textarea"
-                    id="txt"
-                    name="txt"
-                    placeholder="enter text"
-                />
-                {noteType !== 'note-txt' ? <input placeholder={PLACEHOLDER[noteType]} type='text' id='noteData' name='noteData' /> : null}
-            </div>
-            <div>
-                <label htmlFor="note-txt">Text</label>
-                <input type="radio" name="note-type" id="note-txt" defaultChecked onChange={handleNoteTypeChange} />
-                <label htmlFor="note-img">Img</label>
-                <input type="radio" name="note-type" id="note-img" onChange={handleNoteTypeChange} />
-                <label htmlFor="video-note">Video</label>
-                <input type="radio" name="note-type" id="note-vid" onChange={handleNoteTypeChange} />
-                <label htmlFor="todo-note">Todo</label>
-                <input type="radio" name="note-type" id="note-todos" onChange={handleNoteTypeChange} />
-            </div>
+        <form onSubmit={handleSubmitNote} className="flex create-form">
+            <section className="note-creator-container">
+                <div>
+                    <input type="textarea"
+                        id="txt"
+                        name="txt"
+                        placeholder="enter text"
+                    />
+                    {noteType !== 'note-txt' ? <input placeholder={PLACEHOLDER[noteType]} type='text' id='noteData' name='noteData' /> : null}
+                </div>
+                <div>
+                    <label htmlFor="note-txt"><span class="material-symbols-outlined">article</span></label>
+                    <input type="radio" name="note-type" id="note-txt" className="radio-btn-hidden" defaultChecked onChange={handleNoteTypeChange} />
+                    <label htmlFor="note-img"><span class="material-symbols-outlined">image</span></label>
+                    <input type="radio" name="note-type" id="note-img" className="radio-btn-hidden" onChange={handleNoteTypeChange} />
+                    <label htmlFor="note-vid"><span class="material-symbols-outlined">smart_display</span></label>
+                    <input type="radio" name="note-type" id="note-vid" className="radio-btn-hidden" onChange={handleNoteTypeChange} />
+                    <label htmlFor="note-todos"><span class="material-symbols-outlined">list_alt</span></label>
+                    <input type="radio" name="note-type" id="note-todos" className="radio-btn-hidden" onChange={handleNoteTypeChange} />
+                </div>
 
-            <button>Add</button>
+                <button className="create-note-btn"><span class="material-symbols-outlined">note_add</span></button>
+            </section>
         </form>
     )
 

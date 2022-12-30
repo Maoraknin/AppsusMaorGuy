@@ -60,7 +60,6 @@ export function NoteIndex() {
     const onSetFillter = (fillterBy) => {
         setFillterBy(fillterBy)
     }
-    console.log('fillter from note index', fillterBy)
 
 
 

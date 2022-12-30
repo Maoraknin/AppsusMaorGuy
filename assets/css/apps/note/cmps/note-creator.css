@@ -1,0 +1,37 @@
+
+.note-creator-container{
+    display: flex;
+    padding: 1rem 2rem;
+    gap: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.create-form{
+    justify-content: center;
+}
+
+.create-form input{
+    padding: 0.5rem;
+    border: none;
+}
+
+.create-form input:focus-visible{
+    outline: none;
+}
+
+.create-note-btn{
+    background-color: white;
+    border: none;
+    padding: 2px;
+}
+
+.create-note-btn:hover{
+    background-color: rgb(218, 218, 218);
+    border-radius: 50%;
+}
+
+.radio-btn-hidden{
+    display: none;
+}
