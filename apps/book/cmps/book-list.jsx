@@ -8,7 +8,7 @@ export function BookList({ books, onRemoveBook }) {
         <section>
             <ul className="book-list">
                 <li key={'add-book'} className="add-book-container">
-                <Link to={`/book/add`}><img src='../assets/img/add-book.png' /></Link>
+                <Link to={`/book/add`}><img src='assets/img/add-book.png' /></Link>
                     <h2 className="book-preview-title">Add new book to our shop!</h2>
                 </li>
                 {
@@ -16,7 +16,6 @@ export function BookList({ books, onRemoveBook }) {
                         <BookPreview book={book} />
                         <div>
                             <span onClick={() => onRemoveBook(book.id)} class="material-symbols-outlined">delete</span>
-                            {/* <button onClick={() => onSelectBook(book.id)}>Read More</button> */}
 
                         </div>
                     </li>)

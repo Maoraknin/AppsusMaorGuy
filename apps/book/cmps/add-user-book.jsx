@@ -31,7 +31,7 @@ export function AddUserBook() {
         ev.preventDefault()
         if(addedBook.authors.length) addedBook.authors = addedBook.authors.split(',')
         if(addedBook.categories.length) addedBook.categories = addedBook.categories.split(',')
-        if(!addedBook.thumbnail) addedBook.thumbnail = '../assets/img/default.jpg'
+        if(!addedBook.thumbnail) addedBook.thumbnail = 'assets/img/default.jpg'
         bookService.save(addedBook).then(() => {
             navigate('/book')
             showSuccessMsg('Book Added')
