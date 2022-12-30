@@ -1,9 +1,16 @@
 
-.home-text-container{
-    padding: 5rem;
-    display: flex;
-    flex-direction: column;
+
+.home-container{
+    background-image: url("../../png/background.png");
+    background-repeat: no-repeat;
+    height: 91vh;
+    background-size: cover;
+    width: 100%;
+    color: rgb(40, 40, 40);
     text-align: center;
+    padding: 5rem;
+
+
 }
 
 .home-title{
@@ -19,6 +26,7 @@
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-top: 100px;
 }
 
 .home-nav-container img{

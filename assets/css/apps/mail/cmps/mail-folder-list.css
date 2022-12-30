@@ -6,7 +6,23 @@
     padding-right: 20px;
 }
 
+.persent-bar-container{
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding-left: 0;
+    border-radius: 2rem;
+    width: 80%;
+    background-color: white;
+}
 
+.persent-bar{
+    border-radius: 2rem;
+    background-color: #c2e7ff;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 2px;
+}
 
 .icon{
 font-size: 1.2rem;
@@ -15,6 +31,7 @@ cursor: pointer;
 color: rgb(93, 93, 93);
 
 }
+
 
 .folder-list-item{
     display: flex;

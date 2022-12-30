@@ -7,7 +7,7 @@ const MAIL_KEY = 'mailDB'
 const loggedinUser = {
   email: 'maoraknin125@appsus.com',
   fullname: 'Maor Aknin'
- }
+}
 _createMails()
 
 export const mailService = {
@@ -19,6 +19,8 @@ export const mailService = {
   getDefaultFilter,
   getEmptyMailToSend,
   getEmptyMailToDraft,
+  getInboxNum,
+  getReadPersent,
   // addReview,
   // getNextBookId,
   // getPrevBookId
@@ -63,11 +65,11 @@ function query(filterBy) {
         })
       }
       if (filterBy.status) {
-        if(filterBy.status === 'all'){
+        if (filterBy.status === 'all') {
           mails = mails.filter(mail => {
             return (mail.status !== 'trash' && mail.status !== 'draft')
           })
-        }else{
+        } else {
           mails = mails.filter(mail => {
             return mail.status === filterBy.status
           })
@@ -77,11 +79,27 @@ function query(filterBy) {
     })
 }
 
+function getReadPersent(){
+  return storageService.query(MAIL_KEY)
+    .then(mails => {
+      const newMails = mails.filter(mail => mail.isRead)
+      return Math.ceil((newMails.length / mails.length) * 100)
+    })
+}
+
+function getInboxNum() {
+  return storageService.query(MAIL_KEY)
+    .then(mails => {
+      const newMails = mails.filter(mail => mail.status === 'inbox')
+      return newMails.length
+    })
+}
+
 function getDefaultFilter() {
   return { txt: '', isRead: null, status: 'all' }
 }
 
-function getEmptyMailToSend(){
+function getEmptyMailToSend() {
   return {
     subject: '',
     from: loggedinUser.fullname,
@@ -95,7 +113,7 @@ function getEmptyMailToSend(){
   }
 }
 
-function getEmptyMailToDraft(){
+function getEmptyMailToDraft() {
   return {
     subject: '',
     from: loggedinUser.fullname,
@@ -189,7 +207,7 @@ function _createMails() {
       {
         id: 'e107',
         subject: 'Job offer',
-        from: 'Momo' ,
+        from: 'Momo',
         fromEmail: 'makemoney@momo.com',
         body: 'come work at our firm, good money and good hours, you can start on Mmonday!',
         isRead: false,
@@ -238,11 +256,11 @@ function _createMails() {
         id: 'e111',
         subject: 'Thailand',
         from: 'ISTA',
-        fromEmail:'ista@momo.com',
+        fromEmail: 'ista@momo.com',
         body: 'come with us and have the best vecation of your life in the cheapest price possible',
         isRead: true,
         sentAt: 1671883149000,
-        to:  loggedinUser.email,
+        to: loggedinUser.email,
         status: 'inbox',
         isStared: true
       },
@@ -262,11 +280,11 @@ function _createMails() {
         id: 'e113',
         subject: 'Job offer!',
         from: 'Zimbabua',
-        fromEmail:'makemoney@momo.com',
+        fromEmail: 'makemoney@momo.com',
         body: 'if you want to make shit loads of money come to us and we will make you rich! we pay very good and you can have the best life possible!',
         isRead: true,
         sentAt: 1671883149000,
-        to:  loggedinUser.email,
+        to: loggedinUser.email,
         status: 'inbox',
         isStared: false
       },
@@ -274,11 +292,11 @@ function _createMails() {
         id: 'e114',
         subject: 'SPAN!',
         from: 'elad ashuah',
-        fromEmail:'makemoney@momo.com',
+        fromEmail: 'makemoney@momo.com',
         body: 'if you happy and you know it clap your hands so be happy and dont be un happy',
         isRead: false,
         sentAt: 1671883149000,
-        to:  loggedinUser.email,
+        to: loggedinUser.email,
         status: 'inbox',
         isStared: false
       },

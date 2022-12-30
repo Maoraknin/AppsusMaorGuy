@@ -78,7 +78,7 @@ export function MailIndex() {
     return <main className="mail-index-container">
         <MailFilter onSetFilter={onSetFilter}/>
         <section className="mail-container">
-            <MailFolderList onSetFilter={onSetFilter} onToggleCompose={onToggleCompose}/>
+            <MailFolderList mails={mails} onSetFilter={onSetFilter} onToggleCompose={onToggleCompose}/>
             <MailList mails={mails} setStared={setStared} removeMail={removeMail} onSetFilter={onSetFilter} setReadMail={setReadMail} setToggleRead={setToggleRead}/>
            {isComposeClicked && <MailCompose addMail={addMail} onToggleCompose={onToggleCompose}  saveDraft={saveDraft}/>}
         </section>

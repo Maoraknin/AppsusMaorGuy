@@ -4,13 +4,9 @@
     padding: 0.6rem;
     /* font-weight: 700; */
     box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+    cursor: pointer;
 }
 
-
-.mail-preview:hover{
-    padding: 0.6rem;
-    padding-bottom: 0.3rem;
-}
 
 .mail-preview td:first-child{
     display: flex;
@@ -34,12 +30,34 @@
 }
 
 .mail-actions{
-    text-align: end;
     display: none;
 }
 
 .mail-preview:hover .mail-actions{
-    display: block;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.mail-hidden-container{
+    background-color: white;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.fullscreen{
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 2rem;
+    background-color: rgb(240, 240, 240);
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.fullscreen:hover{
+    background-color: rgb(228, 228, 228);
 }
 
 

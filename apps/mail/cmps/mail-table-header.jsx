@@ -24,13 +24,20 @@ export function MailTableHeader({ onSetFilter }) {
     return <thead>
         
 
-        <th className="mail-table-header" onClick={() => setIsClicked(!isClicked)}><span class="material-symbols-outlined read-filter">list</span>
+        <th className="mail-table-header">
+            <div className="table-header-btn-container flex">
+            <span  onClick={() => setIsClicked(!isClicked)} className="material-symbols-outlined read-filter">list</span>
+            <span  onClick={() => window.location.reload()} className="material-symbols-outlined refresh">refresh</span>
+            </div>
         {isClicked && <div className="read-filter-modal">
             <p className="read-filter-option" onClick={() => handleChange(null)}>All</p>
             <p className="read-filter-option" onClick={() => handleChange(false)}>Read</p>
             <p className="read-filter-option" onClick={() => handleChange(true)}>Unread</p>
 
         </div>}
+        </th>
+
+        <th>
         </th>
     </thead>
 
