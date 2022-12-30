@@ -1,37 +1,44 @@
-import { NotePreview } from "./note-previews.jsx"
+import { NotePreview } from "./note-preview.jsx"
 
 
-export function NoteList({ notes }) {
+export function NoteList({ notes, editNote, removeNote, addNote }) {
 
-    return (
-        <div className="memo-container">
-            {
-                notes.map(note => 
-                    <NotePreview note={note} />
-                )
+    const divideNotes = () => {
+        const pinned = []
+        const unpinned = []
+        for (const note of notes) {
+            if (note.isPinned) {
+                pinned.push(note)
+            } else {
+                unpinned.push(note)
             }
+
+        }
+        return { pinned, unpinned }
+    }
+    const { pinned, unpinned } = divideNotes()
+    return (
+        <div>
+            <div className="memo-container">
+                {
+                    pinned && pinned.length ? pinned.map(note =>
+                        <NotePreview
+                            key={note.id}
+                            note={note} type={note.type} editNote={editNote} removeNote={removeNote} addNote={addNote} />
+                    ) : null
+                }
+            </div>
+            <div className="memo-container">
+                {
+                    unpinned && unpinned.length ? unpinned.map(note =>
+                        <NotePreview
+                            key={note.id}
+                            note={note} type={note.type} editNote={editNote} removeNote={removeNote} addNote={addNote} />
+                    ) : null
+                }
+            </div>
         </div>
 
-
-
-        // <section>
-        //     <ul >
-        //         {
-        //             notes.map(note => <li key={note.id}>
-        //                 <NotePreview note={note} />
-        //                 <div>
-        //                     <button>Change Background color</button>
-        //                     <button>Pin Memo</button>
-        //                     <button>Edit</button>
-        //                     <button>Copy</button>
-        //                     <button>Delete</button>
-        //                     <button>Send as Email</button>
-        //                     {/* <Link to={`/book/${book.id}`}>Read More</Link> */}
-        //                 </div>
-        //             </li>)
-        //         }
-        //     </ul>
-        // </section>
     )
 }
 

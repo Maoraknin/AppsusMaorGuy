@@ -19,8 +19,8 @@ function get(entityType, entityId) {
     })
 }
 
-function post(entityType, newEntity) {
-    newEntity = {...newEntity}
+function post(entityType, data) {
+    const newEntity = { ...data }
     newEntity.id = _makeId()
     return query(entityType).then(entities => {
         entities.unshift(newEntity)

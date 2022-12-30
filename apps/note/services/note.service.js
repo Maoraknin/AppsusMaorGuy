@@ -9,14 +9,24 @@ export const noteService = {
   get,
   remove,
   save,
-  getNoteText
+  getNoteEditData,
+  getDefaultFillter,
+  createNote,
 }
 
 
 
-function query() {
+function query(fillterBy = getDefaultFillter()) {
   return storageService.query(NOTE_KEY)
     .then(notes => {
+      if (fillterBy.txt) {
+        const regex = new RegExp(fillterBy.txt, 'i')
+        notes = notes.filter(note => (regex.test(note.info.title) || regex.test(note.info.label) || regex.test(note.info.txt)))
+      }
+      if (fillterBy.noteType) {
+        notes = notes.filter(note => (note.type === fillterBy.noteType))
+      }
+
       console.log(notes)
       return notes
     })
@@ -31,21 +41,86 @@ function remove(noteId) {
 }
 
 function save(note) {
-  if (note.id) return storageService.put(NOTE_KEY, note)
-  else return storageService.post(NOTE_KEY, note)
-}
-
-
-
-function getNoteText(txt) {
-  return {
-    type: "note-txt",
-    isPinned: false,
-    info: {
-      txt: txt
-    }
+  if (note.id) {
+    return storageService.put(NOTE_KEY, note);
+  } else {
+    return storageService.post(NOTE_KEY, note);
   }
 }
+
+function getDefaultFillter() {
+  return { txt: '', noteType: '' }
+}
+
+
+function getNoteEditData(note) {
+  if (note.type === "note-txt") {
+    return { title: note.info.txt, content: '', titleField: 'txt' }
+  }
+
+  if (["note-img", "note-vid"].includes(note.type)) {
+    return { title: note.info.title, content: note.info.url, titleField: 'title', contentField: 'url' }
+  }
+
+  if (note.type === "note-todos") {
+    return {
+      title: note.info.label, content: note.info.todos.map(todo => todo.txt).join(', '),
+      titleField: 'title',
+      contentField: 'todos'
+    }
+  }
+
+  throw new Error('noteType is unknown')
+
+}
+
+function createNote(noteType, textInput, noteData) {
+  const color = 'lightblue';
+  if (noteType === "note-txt") {
+    return {
+      type: "note-txt",
+      isPinned: false,
+      info: { txt: textInput }, color
+    }
+  }
+
+  if (noteType === "note-img") {
+    return {
+      type: "note-img",
+      isPinned: false,
+      info: {
+        url: noteData,
+        title: textInput
+      }, color
+    }
+  }
+
+  if (noteType === "note-vid") {
+    return {
+      type: "note-vid",
+      isPinned: false,
+      info: {
+        url: noteData,
+        title: textInput
+      }, color
+    }
+  }
+
+  if (noteType === "note-todos") {
+    // 'aa, b,b'
+    const todos = noteData.split(',').map(todo => ({ txt: todo.trim(), doneAt: null }))
+    return {
+      type: "note-todos",
+      isPinned: false,
+      info: {
+        label: textInput, todos
+      }, color
+    }
+  }
+
+  throw new Error('noteType is unknown')
+}
+
 
 
 function _createNotes() {
@@ -64,7 +139,7 @@ function _createNotes() {
         id: "n102",
         type: "note-img",
         info: {
-          url: "http://some-img/me",
+          url: "https://www.datocms-assets.com/45470/1631110818-logo-react-js.png?fm=webp",
           title: "Bobi and Me"
         },
         style: {
