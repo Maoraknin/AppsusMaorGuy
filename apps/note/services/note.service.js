@@ -142,10 +142,10 @@ function _createNotes() {
         type: 'note-img',
         isPinned: false,
         info: {
-          url: 'http://some-img/me',
-          title: 'Bobi and Me'
+          url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3W8127PLaaJVUZvSTMDWmG7JMPfvUeT4VVg&usqp=CAU',
+          title: 'The G.O.A.T'
         },
-        color: 'green'
+        color: 'lightblue'
       },
       {
         id: 'n103',
