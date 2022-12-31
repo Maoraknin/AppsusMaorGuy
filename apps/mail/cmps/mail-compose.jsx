@@ -18,7 +18,7 @@ export function MailCompose({ addMail, onToggleCompose,  saveDraft }) {
     }
 
     function createNewMail(target) {
-        const newMail = mailService.getEmptyMailToDraft()
+        const newMail = mailService.getEmptyMailToSend()
         newMail.to = target.to.value
         newMail.subject = target.subject.value
         newMail.body = target.body.value

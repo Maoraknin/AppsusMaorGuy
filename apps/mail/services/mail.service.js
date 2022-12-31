@@ -75,6 +75,7 @@ function query(filterBy) {
           })
         }
       }
+      console.log('mails:',mails)
       return mails
     })
 }
@@ -130,6 +131,7 @@ function getEmptyMailToDraft() {
 
 function _createMails() {
   let mails = utilService.loadFromStorage(MAIL_KEY)
+  console.log('mails:',mails)
   if (!mails || !mails.length) {
     mails = [
       {
@@ -147,7 +149,7 @@ function _createMails() {
       {
         id: 'e102',
         subject: 'Love you!',
-        from: 'Yehuda',
+        from: 'yehuda223@gmail.com',
         fromEmail: 'yehuda223@gmail.com',
         body: 'Would LOVE to catch up sometimes',
         isRead: true,
