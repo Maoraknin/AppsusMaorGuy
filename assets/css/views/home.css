@@ -56,8 +56,12 @@
 
     .home-container{
         padding: 3rem 1rem;
-    
-    
+    }
+
+    .home-nav-container img{
+        min-width: 90px;
+        max-height: 220px;
+        padding: 5px;
     }
     
 }
