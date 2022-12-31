@@ -1,6 +1,6 @@
 .mail-preview {
     display: grid;
-    grid-template-columns: 200px 1fr 100px;
+    grid-template-columns: 200px 1fr 50px;
     padding: 0.6rem;
     /* font-weight: 700; */
     box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
@@ -104,9 +104,25 @@
         -webkit-line-clamp: 2;
         line-clamp: 2;
     }
+
     .mail-preview {
         grid-template-columns: 100px 1fr 50px;
     }
+
+    .mail-content{
+        padding-left: 1rem;
+    }
+
+    .mail-sender {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+        line-height: 1.2rem;
+    }
+ 
     
 }
 

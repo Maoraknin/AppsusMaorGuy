@@ -91,7 +91,13 @@ color: rgb(93, 93, 93);
 }
 
 @media (max-width: 560px) {
+
+    .folder-list-container{
+        padding-right: 10px;
+    }
+
+
     .folder-list-item{
-        padding-left: 2rem;
+        padding-left: 1rem;
     }
 }
