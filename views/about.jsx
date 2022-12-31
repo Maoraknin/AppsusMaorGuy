@@ -8,17 +8,17 @@ export function About() {
                 <p className="team-member-job">Full-stack Developer</p>
                 <ul className="social-buttons-list">
                     <li className="social-item">
-                        <a href="https://github.com/Maoraknin">
+                        <a href="https://github.com/Maoraknin" target="_blank">
                         <i class="fa-brands fa-github"></i>
                         </a>
                     </li>
                     <li className="social-item">
-                        <a href="https://www.facebook.com/maor.aknin.3/">
+                        <a href="https://www.facebook.com/maor.aknin.3/" target="_blank">
                             <i className="fa fa-facebook"></i>
                         </a>
                     </li>
                     <li className="social-item">
-                        <a href="https://www.linkedin.com/in/maor-aknin-b63a46243/">
+                        <a href="https://www.linkedin.com/in/maor-aknin-b63a46243/" target="_blank">
                             <i className="fa fa-linkedin"></i>
                         </a>
                     </li>
@@ -39,17 +39,17 @@ export function About() {
                 <p className="team-member-job">Full-stack Developer</p>
                 <ul className="social-buttons-list">
                     <li className="social-item">
-                        <a href="https://github.com/Guyagam">
+                        <a href="https://github.com/Guyagam" target="_blank">
                             <i class="fa fa-github"></i>
                         </a>
                     </li>
                     <li className="social-item">
-                        <a href="https://www.facebook.com/guy.agam.9/">
+                        <a href="https://www.facebook.com/guy.agam.9/" target="_blank">
                             <i className="fa fa-facebook"></i>
                         </a>
                     </li>
                     <li className="social-item">
-                        <a href="https://www.linkedin.com/in/guy-agam-647371229/">
+                        <a href="https://www.linkedin.com/in/guy-agam-647371229/" target="_blank">
                             <i className="fa fa-linkedin"></i>
                         </a>
                     </li>
