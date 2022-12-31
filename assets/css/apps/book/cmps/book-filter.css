@@ -14,17 +14,18 @@
 .book-filter {
     background-color: #f1f6ff;
     padding: 1rem 0 0.5rem;
+    text-align: center;
 }
 
 .book-filter .filter-form {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     
 }
 
 .input-container{
     display: grid;
-    justify-items: left;
+    justify-content: center;
     grid-template-columns: 80px 200px;
     margin-bottom: 1rem;
     align-items: center;

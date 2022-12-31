@@ -12,7 +12,15 @@
 }
 
 .book-preview img {
-    /* max-width: 100px; */
+    padding: 10px;
+    width: 110%;
+}
+
+.book-preview img:hover {
+    /* animation: bounce;  */
+    padding: 0;
+    transition-duration: 400ms;
+    /* animation-duration: 2s; */
 }
 
 .book-preview-price{
