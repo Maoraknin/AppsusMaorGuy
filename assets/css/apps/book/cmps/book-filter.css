@@ -1,5 +1,6 @@
 
 .book-title{
+    font-family: Dream-bd;
     padding: 2rem;
     font-size: 2.5rem;
     text-align: center;
@@ -7,6 +8,7 @@
 
 .filter-title{
     /* padding: 2rem; */
+    font-family: Dream-bd;
     font-size: 1.5rem;
 
 }

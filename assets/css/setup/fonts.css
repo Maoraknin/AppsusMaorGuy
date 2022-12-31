@@ -15,6 +15,11 @@
 }
 
 @font-face {
+    font-family: Dream-bd;
+    src: url("../../fonts/Dream\ Orphans\ Bd.otf");
+}
+
+@font-face {
     font-family: fa-brands;
     src: url("../../fonts/font-awesome/fa-brands-400.ttf");
 }

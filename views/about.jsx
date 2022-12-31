@@ -1,6 +1,6 @@
 
 export function About() {
-    return <section className="about">
+    return <section className="about animate__animated animate__fadeIn">
         <div className="team-member-container">
             <div className="team-member-social-container">
                 <img src="assets/img/me.jpg" className="team-member-img" />

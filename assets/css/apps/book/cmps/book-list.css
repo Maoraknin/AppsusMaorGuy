@@ -21,4 +21,6 @@
 .add-book-container img{
     object-fit: contain;
     cursor: pointer;
+    padding: 20px 0;
+    /* min-height: 240px; */
 }

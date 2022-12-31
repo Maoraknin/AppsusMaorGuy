@@ -14,12 +14,12 @@
 }
 
 .home-title{
-    font-family: heading-now;
+    font-family: Dream-bd;
     font-size: 3rem;
     
 }
 .home-text{
-    font-family: roboto;
+    font-family: Dream-bd;
     font-size: 1.7rem;
 }
 
@@ -32,8 +32,8 @@
 
 .home-nav-container img{
     min-width: 90px;
-    max-height: 220px;
-    padding: 20px;
+    max-height: 200px;
+    padding: 10px;
 }
 
 .home-nav-container img:hover{
