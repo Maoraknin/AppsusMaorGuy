@@ -12,7 +12,8 @@ export const utilService = {
     getFormattedDay,
     animateCSS,
     debounce,
-    getRandomColor
+    getRandomColor,
+
 }
 function makeId(length = 6) {
     var txt = ''
@@ -145,3 +146,4 @@ function getRandomColor() {
     }
     return color;
 }
+
