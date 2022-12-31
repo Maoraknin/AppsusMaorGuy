@@ -44,7 +44,7 @@ export function BookIndex() {
 
 
     return (
-        <section className="book-index">
+        <section className="book-index animate__animated animate__fadeIn">
            <div className="main-layout">
             <h1 className="book-title">Appsus book shop</h1>
                 <BookFilter onSetFilter={onSetFilter} />
