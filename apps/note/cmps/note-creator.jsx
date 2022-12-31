@@ -35,7 +35,7 @@ export function NoteCreator({ addNote }) {
                         name="txt"
                         placeholder="enter text"
                     />
-                    {noteType !== 'note-txt' ? <input placeholder={PLACEHOLDER[noteType]} type='text' id='noteData' name='noteData' /> : null}
+                    {noteType !== 'note-txt' ? <input className="note-data" placeholder={PLACEHOLDER[noteType]} type='text' id='noteData' name='noteData' /> : null}
                 </div>
                 <div>
                     <label htmlFor="note-txt"><span class="material-symbols-outlined icon-btn">article</span></label>

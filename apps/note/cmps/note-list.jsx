@@ -19,8 +19,8 @@ export function NoteList({ notes, editNote, removeNote, addNote }) {
     const { pinned, unpinned } = divideNotes()
     return (
         <div>
+            {pinned && pinned.length ? <h3>pin note: {pinned.length}</h3> : null}
             <div className="memo-pined-container">
-                {pinned && pinned.length ? <h3>pin note: {pinned.length}</h3> : null}
 
                 {
                     pinned && pinned.length ? pinned.map(note =>

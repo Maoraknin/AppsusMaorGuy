@@ -30,7 +30,7 @@ export function NoteFilter({ onSetFillter }) {
   return (<section className="note-fillter">
     <form onSubmit={onSubmitFillter}>
       {/* <label htmlFor="note-type">Type:</label> */}
-      <input type="text" id="txt"
+      <input className="input-filter" type="text" id="txt"
         name="txt"
         placeholder="Please text to filter "
         onChange={handleTypeChange}
