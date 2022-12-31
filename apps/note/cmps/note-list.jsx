@@ -19,7 +19,9 @@ export function NoteList({ notes, editNote, removeNote, addNote }) {
     const { pinned, unpinned } = divideNotes()
     return (
         <div>
-            <div className="memo-container">
+            <div className="memo-pined-container">
+                {pinned && pinned.length ? <h3>pin note: {pinned.length}</h3> : null}
+
                 {
                     pinned && pinned.length ? pinned.map(note =>
                         <NotePreview

@@ -11,7 +11,8 @@ export const utilService = {
     getFormattedDate,
     getFormattedDay,
     animateCSS,
-    debounce
+    debounce,
+    getRandomColor
 }
 function makeId(length = 6) {
     var txt = ''
@@ -134,4 +135,13 @@ function debounce(func, timeout = 500) {
         clearTimeout(timer)
         timer = setTimeout(() => { func.apply(this, args) }, timeout)
     }
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }

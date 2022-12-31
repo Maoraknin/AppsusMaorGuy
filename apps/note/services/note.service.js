@@ -75,7 +75,7 @@ function getNoteEditData(note) {
 }
 
 function createNote(noteType, textInput, noteData) {
-  const color = 'lightblue';
+  const color = utilService.getRandomColor()
   if (noteType === "note-txt") {
     return {
       type: "note-txt",
@@ -133,28 +133,6 @@ function _createNotes() {
         isPinned: true,
         info: {
           txt: "Fullstack Me Baby!"
-        }
-      },
-      {
-        id: "n102",
-        type: "note-img",
-        info: {
-          url: "https://www.datocms-assets.com/45470/1631110818-logo-react-js.png?fm=webp",
-          title: "Bobi and Me"
-        },
-        style: {
-          backgroundColor: "#00d"
-        }
-      },
-      {
-        id: "n103",
-        type: "note-todos",
-        info: {
-          label: "Get my stuff together",
-          todos: [
-            { txt: "Driving liscence", doneAt: null },
-            { txt: "Coding power", doneAt: 187111111 }
-          ]
         }
       }
     ]
