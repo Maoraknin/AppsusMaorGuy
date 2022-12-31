@@ -128,14 +128,42 @@ function _createNotes() {
   if (!notes || !notes.length) {
     notes = [
       {
-        id: "n101",
-        type: "note-txt",
-        isPinned: true,
+        id: 'n101',
+        createdAt: 1112222,
+        type: 'note-txt',
+        isPinned: false,
+        color: 'red',
         info: {
-          txt: "Fullstack Me Baby!"
+          txt: 'Fullstack Me Baby!'
+        }
+      },
+      {
+        id: 'n102',
+        type: 'note-img',
+        isPinned: false,
+        info: {
+          url: 'http://some-img/me',
+          title: 'Bobi and Me'
+        },
+        color: 'green'
+      },
+      {
+        id: 'n103',
+        type: 'note-todos',
+        isPinned: false,
+        color: 'yellow',
+        info: {
+          title: 'Get my stuff together',
+          todos: [
+            { txt: 'Driving liscence', doneAt: null },
+            { txt: 'Coding power', doneAt: 187111111 }
+          ]
         }
       }
+
     ]
     utilService.saveToStorage(NOTE_KEY, notes)
   }
 }
+
+
