@@ -7,7 +7,7 @@ export function AppHeader() {
     const [isClicked, setIsClicked] = useState(false)
 
     return <header className="app-header">
-        <Link to="/" className="app-header-logo">
+        <Link to="/" className="app-header-logo" onClick={() => setIsClicked(false)}>
             <img src="assets/svg/horse.svg" className="img-logo" /> Appsus
         </Link>
         <span onClick={() => setIsClicked(!isClicked)} class="material-symbols-outlined menu">menu</span>
