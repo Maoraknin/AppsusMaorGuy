@@ -38,17 +38,17 @@ export function NoteCreator({ addNote }) {
                     {noteType !== 'note-txt' ? <input placeholder={PLACEHOLDER[noteType]} type='text' id='noteData' name='noteData' /> : null}
                 </div>
                 <div>
-                    <label htmlFor="note-txt"><span class="material-symbols-outlined">article</span></label>
+                    <label htmlFor="note-txt"><span class="material-symbols-outlined icon-btn">article</span></label>
                     <input type="radio" name="note-type" id="note-txt" className="radio-btn-hidden" defaultChecked onChange={handleNoteTypeChange} />
-                    <label htmlFor="note-img"><span class="material-symbols-outlined">image</span></label>
+                    <label htmlFor="note-img"><span class="material-symbols-outlined icon-btn">image</span></label>
                     <input type="radio" name="note-type" id="note-img" className="radio-btn-hidden" onChange={handleNoteTypeChange} />
-                    <label htmlFor="note-vid"><span class="material-symbols-outlined">smart_display</span></label>
+                    <label htmlFor="note-vid"><span class="material-symbols-outlined icon-btn">smart_display</span></label>
                     <input type="radio" name="note-type" id="note-vid" className="radio-btn-hidden" onChange={handleNoteTypeChange} />
-                    <label htmlFor="note-todos"><span class="material-symbols-outlined">list_alt</span></label>
+                    <label htmlFor="note-todos"><span class="material-symbols-outlined icon-btn">list_alt</span></label>
                     <input type="radio" name="note-type" id="note-todos" className="radio-btn-hidden" onChange={handleNoteTypeChange} />
                 </div>
 
-                <button className="create-note-btn"><span class="material-symbols-outlined">note_add</span></button>
+                <button className="create-note-btn"><span class="material-symbols-outlined icon-btn">note_add</span></button>
             </section>
         </form>
     )

@@ -29,12 +29,13 @@ export function NoteFilter({ onSetFillter }) {
 
   return (<section className="note-fillter">
     <form onSubmit={onSubmitFillter}>
-      <label htmlFor="note-type">Type:</label>
+      {/* <label htmlFor="note-type">Type:</label> */}
       <input type="text" id="txt"
-        placeholder="Please enter note type"
+        name="txt"
+        placeholder="Please text to filter "
         onChange={handleTypeChange}
         value={FillterByEdit.txt} />
-      <button type="submit">Fillter notes!</button>
+      <button className="fillterBtn" type="submit">Fillter notes!</button>
     </form>
 
     <select onChange={onChangeType}>
