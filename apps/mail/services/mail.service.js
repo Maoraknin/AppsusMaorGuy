@@ -158,14 +158,14 @@ function _createMails() {
       },
       {
         id: 'e103',
-        subject: 'Fuck you!',
-        from: loggedinUser.fullname,
-        fromEmail: loggedinUser.email,
-        body: 'Would NOT want to catch up sometimes',
+        subject: 'AppBrewery Web',
+        from: 'AppBrewery',
+        fromEmail: 'AppBrewery@gmail.com',
+        body: 'Enable notifications Download Discord on your phone and receive push notifications for Discord activities like messages, mentions, friend requests, and events.',
         isRead: false,
         sentAt: 1671883249000,
-        to: 'noa221100@gmail.com',
-        status: 'sent',
+        to: loggedinUser.email,
+        status: 'inbox',
         isStared: false
       },
       {

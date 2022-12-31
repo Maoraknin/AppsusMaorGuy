@@ -22,11 +22,9 @@ export function NoteIndex() {
         noteService.save(newNote)
             .then((note) => {
                 setNotes((prevNotes) => [...prevNotes, note])
-                // showSuccessMsg('Book saved!')
             })
             .catch((err) => {
                 console.log('err = ', err)
-                // showErrorMsg('Cancled')
             })
     }
 

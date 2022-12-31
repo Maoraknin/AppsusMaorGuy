@@ -17,6 +17,7 @@
     border-radius: 50%;
     width: 200px;
     height: 200px;
+    min-width: 200px;
 }
 
 .team-member-name {

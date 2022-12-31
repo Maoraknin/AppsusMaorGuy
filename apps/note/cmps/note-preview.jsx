@@ -46,13 +46,16 @@ export function NotePreview({ type, note, editNote, removeNote, addNote }) {
   }
 
   const mailNote = () => {
+    let body
     const { title, content } = noteService.getNoteEditData(note);
-    const params = new URLSearchParams({ title, content });
+    if(note.type === 'note-txt') body = title
+    else body = content
+    const params = new URLSearchParams({ body });
 
-    navigate('/?' + params.toString())
+    navigate('/mail/?' + params.toString())
     // const m =new URLSearchParams('title=dfd&content=as')
     // m.get('title') //'dfd'
-    //https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+    // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
   }
 
 
@@ -63,7 +66,7 @@ export function NotePreview({ type, note, editNote, removeNote, addNote }) {
         <div className='note-actions'>
           <span onClick={() => removeNote(note.id)} className="material-symbols-outlined ">delete</span>
           <span onClick={duplicateNote} className="material-symbols-outlined">content_copy</span>
-          {/* <button onClick={mailNote}>Mail</button> */}
+          <span  onClick={mailNote} class="material-symbols-outlined">mail</span>
           <span onClick={handlePinNote} className={note.isPinned ? "material-symbols-outlined pinned" : "material-symbols-outlined"}>push_pin</span>
           <label htmlFor={"color" + note.id}><span class="material-symbols-outlined">palette</span></label>
           <input style={{ display: 'none' }} onChange={(e) => handleColorChange(e, note)} type="color" name="color" id={"color" + note.id} />
