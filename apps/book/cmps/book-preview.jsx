@@ -5,6 +5,8 @@ import { bookUtils } from '../services/book-utils.js'
 
 export function BookPreview({ book }) {
 
+    console.log('book:',book)
+
 
     return (
         <Link to={`/book/${book.id}`}>

@@ -54,26 +54,14 @@ export function NoteIndex() {
             })
     }
 
-
     const onSetFillter = (fillterBy) => {
         setFillterBy(fillterBy)
     }
 
-
-
-
-
-
     return (<section>
-        <div>
             <NoteFilter onSetFillter={onSetFillter} />
-        </div>
-        <div>
             <NoteCreator addNote={addNote} />
-        </div>
-        <div>
             <NoteList notes={notes} editNote={editNote} removeNote={removeNote} addNote={addNote} />
-        </div>
     </section>)
 
 }

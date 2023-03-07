@@ -17,6 +17,8 @@ export function NoteCreator({ addNote }) {
         const { target } = ev;
         const textInput = target.txt.value;
         const noteData = target.noteData ? target.noteData.value : false;
+        target.txt.value = ''
+        if(noteData) target.noteData.value = ''
         const note = noteService.createNote(noteType, textInput, noteData);
         addNote(note)
     }
@@ -33,11 +35,11 @@ export function NoteCreator({ addNote }) {
                     <input type="textarea"
                         id="txt"
                         name="txt"
-                        placeholder="enter text"
+                        placeholder={noteType === 'note-txt' ? 'Enter text' : 'Enter title'}
                     />
                     {noteType !== 'note-txt' ? <input className="note-data" placeholder={PLACEHOLDER[noteType]} type='text' id='noteData' name='noteData' /> : null}
                 </div>
-                <div>
+                <div className="options-container">
                     <label htmlFor="note-txt"><span class="material-symbols-outlined icon-btn">article</span></label>
                     <input type="radio" name="note-type" id="note-txt" className="radio-btn-hidden" defaultChecked onChange={handleNoteTypeChange} />
                     <label htmlFor="note-img"><span class="material-symbols-outlined icon-btn">image</span></label>
@@ -48,7 +50,7 @@ export function NoteCreator({ addNote }) {
                     <input type="radio" name="note-type" id="note-todos" className="radio-btn-hidden" onChange={handleNoteTypeChange} />
                 </div>
 
-                <button className="create-note-btn"><span class="material-symbols-outlined icon-btn">note_add</span></button>
+                <button className="create-note-btn"><span class="material-symbols-outlined icon-btn">add</span></button>
             </section>
         </form>
     )
