@@ -59,8 +59,8 @@ export function NoteIndex() {
     }
 
     return (<section>
-            <NoteFilter onSetFillter={onSetFillter} />
             <NoteCreator addNote={addNote} />
+            <NoteFilter onSetFillter={onSetFillter} />
             <NoteList notes={notes} editNote={editNote} removeNote={removeNote} addNote={addNote} />
     </section>)
 

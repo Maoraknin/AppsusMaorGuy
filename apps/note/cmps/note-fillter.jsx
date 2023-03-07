@@ -28,17 +28,17 @@ export function NoteFilter({ onSetFillter }) {
 
 
   return (<section className="note-fillter">
-    <form onSubmit={onSubmitFillter}>
-      {/* <label htmlFor="note-type">Type:</label> */}
+    <form className="text-filter-form" onSubmit={onSubmitFillter}>
       <input className="input-filter" type="text" id="txt"
         name="txt"
         placeholder="Please text to filter "
         onChange={handleTypeChange}
         value={FillterByEdit.txt} />
-      <button className="fillterBtn" type="submit">Fillter notes!</button>
+      <button className="fillterBtn" type="submit"><span class="material-symbols-outlined">filter_list</span></button>
     </form>
 
     <select onChange={onChangeType}>
+      <option value=''>All</option>
       <option value='note-txt'>Text</option>
       <option value='note-img'>Image</option>
       <option value='note-vid'>Video</option>
