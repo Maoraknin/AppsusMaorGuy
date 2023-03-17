@@ -8,7 +8,7 @@ My first react project built over a duration of 4 days, Appsus is a single page 
 
 - [Mail App](#mail-app)
 - [Book App](#book-app)
-<!-- - [Note App](#note-app) -->
+- [Note App](#note-app)
 
 ## Mail App 
 
@@ -43,4 +43,16 @@ the search term. We used debounce to minimize API calls.
 - Reviews- the user can add a review on each book.
 - User messages using the event bus
 - Routing 
+
+## Note App
+
+An app that keeps notes (inspired by "Google Keep"). 
+
+![apsus-keep](assets/readme/note.png "note-app")
+
+### Features List
+- The ability to create, update and delete notes (CRUD).
+- Supports setting the note's background color.
+- Supports filtering notes by search.
+- There are several types of notes: text,list, image and video.
 

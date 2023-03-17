@@ -11,14 +11,12 @@
 .memo-container {
   column-count: 3;
   column-gap: 20px;
-  column-fill: auto;
 }
 
 
 .memo-pined-container {
   column-count: 3;
   column-gap: 20px;
-  column-fill: auto;
   margin-bottom: 90px;
 }
 
