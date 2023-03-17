@@ -14,4 +14,4 @@ My first react project built over a duration of 4 days, Appsus is a single page 
 
 An email client app, with a design inspired by Gmail. The user can view his inbox and other folders, view an email, and compose new emails.
 
-![Mail App](assets/img/readme/mail.png "mail-app")
+![Mail App](assets/readme/mail.png "mail-app")
